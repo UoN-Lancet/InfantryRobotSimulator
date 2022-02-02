@@ -1,0 +1,16 @@
+  Rev28_position_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev28
+    pid: {p: 1.0, i: 0.01, d: 0.01}
+  Rev30_position_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev30
+    pid: {p: 1.0, i: 0.01, d: 0.01}
+  Rev32_position_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev32
+    pid: {p: 1.0, i: 0.01, d: 0.01}
+  Rev34_position_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: Rev34
+    pid: {p: 1.0, i: 0.01, d: 0.01}

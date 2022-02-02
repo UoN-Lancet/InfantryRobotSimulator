@@ -1,0 +1,390 @@
+<?xml version="1.0" ?>
+<robot name="infantry" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find infantry_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find infantry_description)/urdf/infantry.trans" />
+<xacro:include filename="$(find infantry_description)/urdf/infantry.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0028595306428350915 0.005466470063147105 0.12313427345636159"/>
+    <mass value="3.094957170953375"/>
+    <inertia ixx="0.091759" ixy="0.002207" ixz="0.000607" iyy="0.096" iyz="-0.000406" izz="0.177545"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SwervePart_2_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.00036972867304832513 0.0003204131523100451 0.010381504376103065"/>
+    <mass value="0.5064834168363301"/>
+    <inertia ixx="0.000876" ixy="0.0" ixz="-4e-06" iyy="0.001024" iyz="-4e-06" izz="0.000703"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.159993 0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_2_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.159993 0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_2_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.027720338795959698 1.9284210200920526e-07 -3.3408852014027435e-07"/>
+    <mass value="0.13397655054414684"/>
+    <inertia ixx="0.000124" ixy="0.0" ixz="-0.0" iyy="8.5e-05" iyz="0.0" izz="8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.187993 0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.187993 0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SwervePart_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0003698810535431307 -0.00032002831395558373 0.010381504532544647"/>
+    <mass value="0.506483416489926"/>
+    <inertia ixx="0.000876" ixy="0.0" ixz="4e-06" iyy="0.001024" iyz="4e-06" izz="0.000703"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.160007 0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.160007 0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_3_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.02827981358383913 1.9284210189818296e-07 -3.340885198696575e-07"/>
+    <mass value="0.13397655054414628"/>
+    <inertia ixx="0.000124" ixy="0.0" ixz="-0.0" iyy="8.5e-05" iyz="-0.0" izz="8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.132007 0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.132007 0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SwervePart_4_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0003697278736722598 0.00032041395168808107 0.010381504376101802"/>
+    <mass value="0.5064834168363109"/>
+    <inertia ixx="0.000876" ixy="0.0" ixz="-4e-06" iyy="0.001024" iyz="-4e-06" izz="0.000703"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.160007 -0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.160007 -0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.028279813583838742 1.9284210203696084e-07 -3.340885198419019e-07"/>
+    <mass value="0.13397655054414645"/>
+    <inertia ixx="0.000124" ixy="0.0" ixz="0.0" iyy="8.5e-05" iyz="-0.0" izz="8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.132007 -0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.132007 -0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="SwervePart_1_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0003698802541624857 -0.0003200275145785747 0.010381504532545924"/>
+    <mass value="0.5064834164899076"/>
+    <inertia ixx="0.000876" ixy="0.0" ixz="4e-06" iyy="0.001024" iyz="4e-06" izz="0.000703"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.159993 -0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.159993 -0.16 -0.08165"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/SwervePart_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Wheel_2_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.02772033879595956 1.9284210125980472e-07 -3.340885201055799e-07"/>
+    <mass value="0.1339765505441467"/>
+    <inertia ixx="0.000124" ixy="-0.0" ixz="-0.0" iyy="8.5e-05" iyz="-0.0" izz="8.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.187993 -0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.187993 -0.16 -0.04"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="GimbalMiddlePart_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0015475012188653397 0.00849373440000338 -0.03526332298854684"/>
+    <mass value="3.0944794290520297"/>
+    <inertia ixx="0.020723" ixy="-0.000642" ixz="-0.000369" iyy="0.02538" iyz="0.001332" izz="0.037438"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="7e-06 -0.0 -0.19485"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/GimbalMiddlePart_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="7e-06 -0.0 -0.19485"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/GimbalMiddlePart_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Yaw_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0030635832768118165 0.0034025995638661266 0.045376442860188604"/>
+    <mass value="0.8421825313038633"/>
+    <inertia ixx="0.003242" ixy="9e-06" ixz="0.000112" iyy="0.004171" iyz="-6.4e-05" izz="0.001841"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="7e-06 0.1 -0.23885"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Yaw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="7e-06 0.1 -0.23885"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Yaw_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Pitch_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0450867142252295 -0.012182589238420874 0.0018735134324607827"/>
+    <mass value="0.6408007814806397"/>
+    <inertia ixx="0.00188" ixy="1e-06" ixz="-4e-06" iyy="0.000975" iyz="-4.9e-05" izz="0.001601"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.045993 0.08 -0.40885"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Pitch_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.045993 0.08 -0.40885"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/Pitch_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="RealsenseD455_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.04765392219825834 0.011889701094456482 -0.00018818560799832573"/>
+    <mass value="0.06518895669523067"/>
+    <inertia ixx="8e-06" ixy="0.0" ixz="-0.0" iyy="7.8e-05" iyz="-0.0" izz="7.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.047493 0.022 -0.45255"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/RealsenseD455_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.047493 0.022 -0.45255"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/RealsenseD455_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="VT02_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.02772071998903955 -0.03218392790148493 0.015508378644964904"/>
+    <mass value="0.03434813943068501"/>
+    <inertia ixx="3.7e-05" ixy="-0.0" ixz="0.0" iyy="1.3e-05" iyz="-1e-06" izz="4.3e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.026993 0.02 -0.47505"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/VT02_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.026993 0.02 -0.47505"/>
+    <geometry>
+      <mesh filename="package://infantry_description/meshes/VT02_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev27" type="continuous">
+  <origin rpy="0 0 0" xyz="0.159993 -0.16 0.08165"/>
+  <parent link="base_link"/>
+  <child link="SwervePart_2_1_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev28" type="continuous">
+  <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
+  <parent link="SwervePart_2_1_1"/>
+  <child link="Wheel_4_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev29" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.160007 -0.16 0.08165"/>
+  <parent link="base_link"/>
+  <child link="SwervePart_3_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev30" type="continuous">
+  <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
+  <parent link="SwervePart_3_1"/>
+  <child link="Wheel_3_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev31" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.160007 0.16 0.08165"/>
+  <parent link="base_link"/>
+  <child link="SwervePart_4_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev32" type="continuous">
+  <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
+  <parent link="SwervePart_4_1"/>
+  <child link="Wheel_1_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev33" type="continuous">
+  <origin rpy="0 0 0" xyz="0.159993 0.16 0.08165"/>
+  <parent link="base_link"/>
+  <child link="SwervePart_1_1"/>
+  <axis xyz="-0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rev34" type="continuous">
+  <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
+  <parent link="SwervePart_1_1"/>
+  <child link="Wheel_2_1"/>
+  <axis xyz="-1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev35" type="continuous">
+  <origin rpy="0 0 0" xyz="-7e-06 0.0 0.19485"/>
+  <parent link="base_link"/>
+  <child link="GimbalMiddlePart_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Rev36" type="continuous">
+  <origin rpy="0 0 0" xyz="0.0 -0.1 0.044"/>
+  <parent link="GimbalMiddlePart_1"/>
+  <child link="Yaw_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="Rev37" type="continuous">
+  <origin rpy="0 0 0" xyz="0.046 0.02 0.17"/>
+  <parent link="Yaw_1"/>
+  <child link="Pitch_1"/>
+  <axis xyz="-1.0 -0.0 0.0"/>
+</joint>
+
+<joint name="Rigid38" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0015 0.058 0.0437"/>
+  <parent link="Pitch_1"/>
+  <child link="RealsenseD455_1"/>
+</joint>
+
+<joint name="Rigid39" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.019 0.06 0.0662"/>
+  <parent link="Pitch_1"/>
+  <child link="VT02_1"/>
+</joint>
+
+</robot>
