@@ -13,12 +13,14 @@ sudo apt-get install ros-$(distro)-ros-gazebo*
 ```
 
 ## 运行
+```bash
 roslaunch infantry_description gazebo.launch #打开gazebo模拟器，显示机器人
 roslaunch infantry_description controller.launch #打开控制器，加载控制器
-
+```
 ## 控制
+```bash
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 1.0" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
-
+```
 ## TF
 见Doc/frames.pdf
 
