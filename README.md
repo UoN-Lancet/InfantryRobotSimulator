@@ -1,5 +1,7 @@
 # InfantryRobotSimulator
 InfantryRobotSimulator
+
+![avatar](./doc/1.png)
 ## 安装过程
 创建catkin_ws/src
 克隆仓库
