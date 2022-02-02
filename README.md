@@ -18,6 +18,7 @@ roslaunch infantry_description controller.launch #打开控制器，加载控制
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 1.0" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
 
 ## TF
+见Doc/frames.pdf
 
 ## Todo
 控制逻辑，使用python或者cpp实现完整控制逻辑
