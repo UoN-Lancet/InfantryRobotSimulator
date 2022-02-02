@@ -6,9 +6,11 @@ InfantryRobotSimulator
 catkin_make
 
 ## 依赖
+```bash
 sudo apt-get install ros-$(distro)-joint-state* 
 sudo apt-get install ros-$(distro)-robot-state* 
-sudo apt-get install ros-$(distro)-ros-gazebo* 
+sudo apt-get install ros-$(distro)-ros-gazebo*
+```
 
 ## 运行
 roslaunch infantry_description gazebo.launch #打开gazebo模拟器，显示机器人
