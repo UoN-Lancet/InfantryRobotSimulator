@@ -195,3 +195,23 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  sensor_msgs
+  geometry_msgs
+  tf
+)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(chassis src/chassis.cc)
+
+add_executable(middlePart src/middlePart.cc)
+    
+target_link_libraries(chassis ${catkin_LIBRARIES})
+
+target_link_libraries(middlePart ${catkin_LIBRARIES})
