@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>motion_control</name>
+  <name>infantry_motion_control</name>
   <version>0.0.0</version>
-  <description>The motion_control package</description>
+  <description>The infantry_motion_control package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
