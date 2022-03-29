@@ -5,8 +5,6 @@
 <xacro:include filename="$(find infantry_description)/urdf/infantry.trans" />
 <xacro:include filename="$(find infantry_description)/urdf/infantry.gazebo" />
 
-<!-- <link name="world"/> -->
-
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0028595306428350915 0.005466470063147105 0.12313427345636159"/>
@@ -36,7 +34,7 @@
   </collision>
 </link>
 
-<link name="SwervePart_4_1">
+<link name="SwervePart_3">
   <inertial>
     <origin rpy="0 0 0" xyz="0.00036972867304832513 0.0003204131523100451 0.010381504376103065"/>
     <mass value="0.5064834168363301"/>
@@ -45,14 +43,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.159993 0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.159993 0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -65,7 +63,7 @@
   </collision>
 </link>
 
-<link name="Wheel_4_1">
+<link name="Wheel_3">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.027720338795959698 1.9284210200920526e-07 -3.3408852014027435e-07"/>
     <mass value="0.13397655054414684"/>
@@ -74,14 +72,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.187993 0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.187993 0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_3.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -94,7 +92,7 @@
   </collision>
 </link>
 
-<link name="SwervePart_3_1">
+<link name="SwervePart_2">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0003698810535431307 -0.00032002831395558373 0.010381504532544647"/>
     <mass value="0.506483416489926"/>
@@ -103,14 +101,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.160007 0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.160007 0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -123,7 +121,7 @@
   </collision>
 </link>
 
-<link name="Wheel_3_1">
+<link name="Wheel_2">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.02827981358383913 1.9284210189818296e-07 -3.340885198696575e-07"/>
     <mass value="0.13397655054414628"/>
@@ -132,14 +130,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.132007 0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.132007 0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_2.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -152,7 +150,7 @@
   </collision>
 </link>
 
-<link name="SwervePart_1_1">
+<link name="SwervePart_0">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0003697278736722598 0.00032041395168808107 0.010381504376101802"/>
     <mass value="0.5064834168363109"/>
@@ -161,14 +159,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.160007 -0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.160007 -0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -181,7 +179,7 @@
   </collision>
 </link>
 
-<link name="Wheel_1_1">
+<link name="Wheel_0">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.028279813583838742 1.9284210203696084e-07 -3.340885198419019e-07"/>
     <mass value="0.13397655054414645"/>
@@ -190,14 +188,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="0.132007 -0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="0.132007 -0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_0.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -210,7 +208,7 @@
   </collision>
 </link>
 
-<link name="SwervePart_2_1">
+<link name="SwervePart_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0003698802541624857 -0.0003200275145785747 0.010381504532545924"/>
     <mass value="0.5064834164899076"/>
@@ -219,14 +217,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.159993 -0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.159993 -0.16 -0.08165"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/SwervePart_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/SwervePart_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -239,7 +237,7 @@
   </collision>
 </link>
 
-<link name="Wheel_2_1">
+<link name="Wheel_1">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.02772033879595956 1.9284210125980472e-07 -3.340885201055799e-07"/>
     <mass value="0.1339765505441467"/>
@@ -248,14 +246,14 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.187993 -0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver"/>
   </visual>
   <collision>
     <origin rpy="0 0 0" xyz="-0.187993 -0.16 -0.04"/>
     <geometry>
-      <mesh filename="package://infantry_description/meshes/Wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://infantry_description/meshes/Wheel_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <surface>
       <friction>
@@ -417,99 +415,71 @@
 <!-- SWERVE: 27 29 31 33 -->
 <!-- Wheel:  28 30 32 34 -->
 
-<!-- 
-rostopic pub -r 1 /infantry/Rev27_position_controller/command std_msgs/Float64 "data: 0"
-rostopic pub -r 1 /infantry/Rev29_position_controller/command std_msgs/Float64 "data: 0"
-rostopic pub -r 1 /infantry/Rev31_position_controller/command std_msgs/Float64 "data: 0"
-rostopic pub -r 1 /infantry/Rev33_position_controller/command std_msgs/Float64 "data: 0"
--->
 
-<!-- 
-rostopic pub -r 1 /infantry/Rev27_position_controller/command std_msgs/Float64 "data: 2.3562"
-rostopic pub -r 1 /infantry/Rev29_position_controller/command std_msgs/Float64 "data: 3.927"
-rostopic pub -r 1 /infantry/Rev31_position_controller/command std_msgs/Float64 "data: 5.49779"
-rostopic pub -r 1 /infantry/Rev33_position_controller/command std_msgs/Float64 "data: 0.7854"
--->
-
-<!--
-rostopic pub -r 1 /infantry/Rev28_position_controller/command std_msgs/Float64 "data: 5"
-rostopic pub -r 1 /infantry/Rev30_position_controller/command std_msgs/Float64 "data: 5"
-rostopic pub -r 1 /infantry/Rev32_position_controller/command std_msgs/Float64 "data: 5"
-rostopic pub -r 1 /infantry/Rev34_position_controller/command std_msgs/Float64 "data: -5"
--->
-
-<!-- 
-1/4 * pi = 0.7854
-2.3562
-3.927
-5.49779 
--->
-
-
-<!-- Swerve 4 RB -->
+<!-- Swerve 3 RB -->
 <joint name="Rev27" type="continuous">
   <origin rpy="0 0 0" xyz="0.159993 -0.16 0.08165"/>
   <parent link="base_link"/>
-  <child link="SwervePart_4_1"/>
+  <child link="SwervePart_3"/>
   <axis xyz="-0.0 0.0 1.0"/>
 </joint>
 
-<!-- Wheel 4 RB -->
+<!-- Wheel 3 RB -->
 <joint name="Rev28" type="continuous">
   <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
-  <parent link="SwervePart_4_1"/>
-  <child link="Wheel_4_1"/>
+  <parent link="SwervePart_3"/>
+  <child link="Wheel_3"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
 </joint>
 
 
-<!-- Swerve 3 LB -->
+<!-- Swerve 2 LB -->
 <joint name="Rev29" type="continuous">
   <origin rpy="0 0 0" xyz="-0.160007 -0.16 0.08165"/>
   <parent link="base_link"/>
-  <child link="SwervePart_3_1"/>
+  <child link="SwervePart_2"/>
   <axis xyz="-0.0 0.0 1.0"/>
 </joint>
 
-<!-- Wheel 3 LB -->
+<!-- Wheel 2 LB -->
 <joint name="Rev30" type="continuous">
   <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
-  <parent link="SwervePart_3_1"/>
-  <child link="Wheel_3_1"/>
+  <parent link="SwervePart_2"/>
+  <child link="Wheel_2"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
 </joint>
 
 
-<!-- Swerve 1 LF -->
+<!-- Swerve 0 LF -->
 <joint name="Rev31" type="continuous">
   <origin rpy="0 0 0" xyz="-0.160007 0.16 0.08165"/>
   <parent link="base_link"/>
-  <child link="SwervePart_1_1"/>
+  <child link="SwervePart_0"/>
   <axis xyz="-0.0 0.0 1.0"/>
 </joint>
 
-<!-- Wheel 1 LF -->
+<!-- Wheel 0 LF -->
 <joint name="Rev32" type="continuous">
   <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
-  <parent link="SwervePart_1_1"/>
-  <child link="Wheel_1_1"/>
+  <parent link="SwervePart_0"/>
+  <child link="Wheel_0"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
 </joint>
 
 
-<!-- Swerve RF 2 -->
+<!-- Swerve RF 1 -->
 <joint name="Rev33" type="continuous">
   <origin rpy="0 0 0" xyz="0.159993 0.16 0.08165"/>
   <parent link="base_link"/>
-  <child link="SwervePart_2_1"/>
+  <child link="SwervePart_1"/>
   <axis xyz="-0.0 0.0 1.0"/>
 </joint>
 
-<!-- Wheel RF 2 -->
+<!-- Wheel RF 1 -->
 <joint name="Rev34" type="continuous">
   <origin rpy="0 0 0" xyz="0.028 0.0 -0.04165"/>
-  <parent link="SwervePart_2_1"/>
-  <child link="Wheel_2_1"/>
+  <parent link="SwervePart_1"/>
+  <child link="Wheel_1"/>
   <axis xyz="-1.0 -0.0 -0.0"/>
 </joint>
 

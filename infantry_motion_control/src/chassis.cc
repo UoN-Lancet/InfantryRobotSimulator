@@ -23,31 +23,28 @@ public:
 class SubPuber
 {
 private:
-  ros::NodeHandle n_;
+  ros::NodeHandle nh;
 
-  ros::Subscriber sub_;
+  ros::Subscriber sub;
 
-  ros::Publisher pubAngle[5];
-  ros::Publisher pubVelocity[5];
+  ros::Publisher pubAngle[4];
+  ros::Publisher pubVelocity[4];
 
 public:
 
   SubPuber(){
-    //Topic you want to subscribe
-    sub_ = n_.subscribe("/chassis_cmd_vel", 1, &SubPuber::callback, this);
+    sub = nh.subscribe("/chassis_cmd_vel", 1, &SubPuber::callback, this);
 
-    //Topic you want to publish
-    // pub_ = n_.advertise<std_msgs::Float64>("/infantry/Rev35_position_controller/command", 1);
 
-    pubAngle[1] = n_.advertise<std_msgs::Float64>("/infantry/Rev31_position_controller/command", 1);
-    pubAngle[2] = n_.advertise<std_msgs::Float64>("/infantry/Rev33_position_controller/command", 1);
-    pubAngle[3] = n_.advertise<std_msgs::Float64>("/infantry/Rev29_position_controller/command", 1);
-    pubAngle[4] = n_.advertise<std_msgs::Float64>("/infantry/Rev27_position_controller/command", 1);
+    pubAngle[0] = nh.advertise<std_msgs::Float64>("/infantry/Rev31_position_controller/command", 1);
+    pubAngle[1] = nh.advertise<std_msgs::Float64>("/infantry/Rev33_position_controller/command", 1);
+    pubAngle[2] = nh.advertise<std_msgs::Float64>("/infantry/Rev29_position_controller/command", 1);
+    pubAngle[3] = nh.advertise<std_msgs::Float64>("/infantry/Rev27_position_controller/command", 1);
 
-    pubVelocity[1] = n_.advertise<std_msgs::Float64>("/infantry/Rev32_position_controller/command", 1);
-    pubVelocity[2] = n_.advertise<std_msgs::Float64>("/infantry/Rev34_position_controller/command", 1);
-    pubVelocity[3] = n_.advertise<std_msgs::Float64>("/infantry/Rev30_position_controller/command", 1);
-    pubVelocity[4] = n_.advertise<std_msgs::Float64>("/infantry/Rev28_position_controller/command", 1);
+    pubVelocity[0] = nh.advertise<std_msgs::Float64>("/infantry/Rev32_position_controller/command", 1);
+    pubVelocity[1] = nh.advertise<std_msgs::Float64>("/infantry/Rev34_position_controller/command", 1);
+    pubVelocity[2] = nh.advertise<std_msgs::Float64>("/infantry/Rev30_position_controller/command", 1);
+    pubVelocity[3] = nh.advertise<std_msgs::Float64>("/infantry/Rev28_position_controller/command", 1);
   }
 
   void callback(const geometry_msgs::Twist &chassisCmdVel)
@@ -57,53 +54,50 @@ public:
     ROS_INFO("ChassisCmdVel is %lf %lf %lf", 
              chassisCmdVel.linear.x, chassisCmdVel.linear.y, chassisCmdVel.angular.z);
 
-    SwerveControl swerve[5];
+    SwerveControl swerve[4];
 
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 0; i <= 3; i++) {
       swerve[i].x = chassisCmdVel.linear.x;
       swerve[i].y = chassisCmdVel.linear.y;
     }
 
     double angularSpeedEffect = chassisCmdVel.angular.z * rtChassisRadius;
 
-    swerve[1].x -= angularSpeedEffect;
+    swerve[0].x -= angularSpeedEffect;
+    swerve[0].y += angularSpeedEffect;
+
+    swerve[1].x += angularSpeedEffect;
     swerve[1].y += angularSpeedEffect;
-
-    swerve[2].x += angularSpeedEffect;
-    swerve[2].y += angularSpeedEffect;
     
-    swerve[3].x -= angularSpeedEffect;
+    swerve[2].x -= angularSpeedEffect;
+    swerve[2].y -= angularSpeedEffect;
+    
+    swerve[3].x += angularSpeedEffect;
     swerve[3].y -= angularSpeedEffect;
-    
-    swerve[4].x += angularSpeedEffect;
-    swerve[4].y -= angularSpeedEffect;
 
 
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 0; i <= 3; i++) {
       float angle = atan2(swerve[i].y, swerve[i].x);
       swerve[i].angle.data = (angle >= 0) ? angle : (angle + 2 * M_PI);
       swerve[i].velocity.data = (float) sqrt(pow(swerve[i].x, 2) + pow(swerve[i].y, 2));
     }
 
-    for (int i = 1; i <= 4; i++) {
+    for (int i = 0; i <= 3; i++) {
       pubAngle[i].publish(swerve[i].angle);
       pubVelocity[i].publish(swerve[i].velocity);
     }
   }
 
-};//End of class SubscribeAndPublish
+};
 
 int main(int argc, char **argv)
 {
-  //Initiate ROS
   ros::init(argc, argv, "Chassis");
 
-  //Create an object of class SubscribeAndPublish that will take care of everything
+
   SubPuber Chassis;
 
   ros::spin();
 
   return 0;
 }
-
-// rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
