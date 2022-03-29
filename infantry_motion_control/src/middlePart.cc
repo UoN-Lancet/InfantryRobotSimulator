@@ -88,7 +88,6 @@ int main(int argc, char **argv)
 }
 
 /*
-
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
 
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 5, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
@@ -100,7 +99,5 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 10, y: 0, z: 0}, a
 
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 0.7854"
 
-
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 0"
-
 */
