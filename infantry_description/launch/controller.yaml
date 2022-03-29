@@ -42,7 +42,7 @@ infantry:
   Rev35_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev35
-    pid: {p: 1.0, i: 0.01, d: 0.01}
+    pid: {p: 0.001, i: 1, d: 0.4}
   Rev36_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev36

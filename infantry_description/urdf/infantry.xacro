@@ -4,6 +4,9 @@
 <xacro:include filename="$(find infantry_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find infantry_description)/urdf/infantry.trans" />
 <xacro:include filename="$(find infantry_description)/urdf/infantry.gazebo" />
+
+<!-- <link name="world"/> -->
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0028595306428350915 0.005466470063147105 0.12313427345636159"/>
@@ -22,6 +25,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -43,6 +54,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/SwervePart_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -64,6 +83,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Wheel_4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -85,6 +112,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/SwervePart_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -106,6 +141,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Wheel_3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -127,6 +170,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/SwervePart_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -148,6 +199,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Wheel_1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -169,6 +228,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/SwervePart_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -190,6 +257,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Wheel_2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -211,6 +286,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/GimbalMiddlePart_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -232,6 +315,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Yaw_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -253,6 +344,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/Pitch_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -274,6 +373,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/RealsenseD455_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
@@ -295,6 +402,14 @@
     <geometry>
       <mesh filename="package://infantry_description/meshes/VT02_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
+    <surface>
+      <friction>
+        <ode>
+          <mu> 1.0 </mu>
+          <mu2> 1.0 </mu2>
+        </ode>
+      </friction>
+    </surface>
   </collision>
 </link>
 
