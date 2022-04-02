@@ -6,16 +6,21 @@
 	
     
     <xacro:property name="lidar_offset_x" value="0" />
-    <xacro:property name="lidar_offset_y" value="0.2" />
-    <xacro:property name="lidar_offset_z" value="0.25" />
+    <xacro:property name="lidar_offset_y" value="0" />
+    <xacro:property name="lidar_offset_z" value="0.1" />
 
-    <xacro:property name="lidar_offset_yaw" value="1.5707963267948966" /> <!-- PI / 2 -->
+    <!-- <xacro:property name="lidar_offset_yaw" value="1.5707963267948966" /> -->
 
     <!-- Lidar -->
     <joint name="lidar_joint" type="fixed">
+
         <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" 
-                rpy="0 0 ${lidar_offset_yaw}" />
-        <parent link="base_link"/>
+                rpy="0 0 0" />
+                
+        <!-- <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" 
+                rpy="0 0 ${lidar_offset_yaw}" /> -->
+
+        <parent link="GimbalMiddlePart_1"/>
         <child link="laser_link"/>
     </joint>
     <xacro:lidar prefix="laser"/>

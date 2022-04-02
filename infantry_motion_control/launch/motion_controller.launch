@@ -1,0 +1,5 @@
+<launch>
+<node name = "middle_part" pkg = "infantry_motion_control" type = "middlePart" respawn="true" output="screen" />
+
+<node name = "chassis" pkg = "infantry_motion_control" type = "chassis" respawn="true" output="screen" />
+</launch>

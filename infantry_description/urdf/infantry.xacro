@@ -5,6 +5,14 @@
 <xacro:include filename="$(find infantry_description)/urdf/infantry.trans" />
 <xacro:include filename="$(find infantry_description)/urdf/infantry.gazebo" />
 
+
+<!-- 为什么所有的模型都歪了90度？吐了！ -->
+<xacro:property name="model_tf_offset" value="-1.5707963267948965579989817342720925807952880859375" />
+<!-- ${model_tf_offset} -->
+<!-- <origin rpy="0 0 0 -->
+<!-- <origin rpy="0 0 ${model_tf_offset} -->
+
+
 <link name="base_link">
   <inertial>
     <origin rpy="0 0 0" xyz="-0.0028595306428350915 0.005466470063147105 0.12313427345636159"/>

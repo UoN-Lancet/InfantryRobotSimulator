@@ -63,15 +63,19 @@ public:
 
     double angularSpeedEffect = chassisCmdVel.angular.z * rtChassisRadius;
 
+    // 左前轮
     swerve[0].x -= angularSpeedEffect;
     swerve[0].y += angularSpeedEffect;
 
+    // 右前轮
     swerve[1].x += angularSpeedEffect;
     swerve[1].y += angularSpeedEffect;
     
+    // 左后轮
     swerve[2].x -= angularSpeedEffect;
     swerve[2].y -= angularSpeedEffect;
-    
+
+    // 右后轮
     swerve[3].x += angularSpeedEffect;
     swerve[3].y -= angularSpeedEffect;
 

@@ -12,7 +12,7 @@ infantry:
   Rev28_position_controller:
     type: velocity_controllers/JointVelocityController
     joint: Rev28
-    pid: {p: 1.0, i: 0.01, d: 0.01}
+    pid: {p: 10.0, i: 1, d: 1}
   Rev29_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev29
@@ -20,7 +20,7 @@ infantry:
   Rev30_position_controller:
     type: velocity_controllers/JointVelocityController
     joint: Rev30
-    pid: {p: 1.0, i: 0.01, d: 0.01}
+    pid: {p: 10.0, i: 1, d: 1}
 
   Rev31_position_controller:
     type: effort_controllers/JointPositionController
@@ -30,7 +30,7 @@ infantry:
   Rev32_position_controller:
     type: velocity_controllers/JointVelocityController
     joint: Rev32
-    pid: {p: 1.0, i: 0.01, d: 0.01}
+    pid: {p: 10.0, i: 1, d: 1}
   Rev33_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev33
@@ -38,7 +38,7 @@ infantry:
   Rev34_position_controller:
     type: velocity_controllers/JointVelocityController
     joint: Rev34
-    pid: {p: 1.0, i: 0.01, d: 0.01}
+    pid: {p: 10.0, i: 1, d: 1}
   Rev35_position_controller:
     type: effort_controllers/JointPositionController
     joint: Rev35
