@@ -27,6 +27,9 @@ roslaunch infantry_description controller.launch # 打开控制器，加载控�
 ```bash
 roslaunch infantry_motion_control motion_controller.launch # 打开运动控制节点
 ```
+```bash
+roslaunch infantry_navigation navigation.launch # 使用gmapping进行SLAM，导航尚未实现
+```
 ## 控制
 ```bash
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 3.1416" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
@@ -34,9 +37,6 @@ rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "
 
 ```bash
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}' # 朝云台指向前进
-```
-```bash
-roslaunch infantry_navigation navigation.launch # 使用gmapping进行SLAM，导航尚未实现
 ```
 
 ## TF
