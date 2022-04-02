@@ -89,8 +89,8 @@ public:
 
 
 #ifdef DEBUG
-    chassisCmdVel.angular.x *= 30;
-    chassisCmdVel.angular.y *= 30;
+    chassisCmdVel.angular.x *= 3;
+    chassisCmdVel.angular.y *= 3;
     chassisCmdVel.angular.z *= 3;
 #endif
 

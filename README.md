@@ -28,7 +28,7 @@ roslaunch infantry_description controller.launch # 打开控制器，加载控�
 roslaunch infantry_motion_control motion_controller.launch # 打开运动控制节点
 ```
 ```bash
-roslaunch infantry_navigation navigation.launch # 使用gmapping进行SLAM，导航尚未实现
+roslaunch infantry_navigation navigation.launch # 启动SLAM并开始导航
 ```
 ## 控制
 ```bash
@@ -47,4 +47,4 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 
 <del>加装传感器，实现SLAM并发布odom</del>
 
-实现2D平面导航
+<del>实现2D平面导航</del>
