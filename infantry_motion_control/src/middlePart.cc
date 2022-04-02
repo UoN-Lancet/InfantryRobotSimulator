@@ -6,7 +6,7 @@
 
 #include <cmath>
 
-// #define YAW_OFFSET
+#define YAW_OFFSET
 // #define DEBUG
 
 
@@ -65,8 +65,8 @@ public:
 
 #ifdef YAW_OFFSET
 
-    chassisCmdVel.linear.x = -cmdVelModulus * sin((yawAngleDiff + middleVelDiff));
-    chassisCmdVel.linear.y = cmdVelModulus * cos((yawAngleDiff + middleVelDiff));
+    chassisCmdVel.linear.x = cmdVelModulus * sin((yawAngleDiff + middleVelDiff));
+    chassisCmdVel.linear.y = -cmdVelModulus * cos((yawAngleDiff + middleVelDiff));
     chassisCmdVel.linear.z = 0;
 
     chassisCmdVel.angular.x = 0;
