@@ -55,7 +55,7 @@
 </gazebo>
 
 <gazebo reference="Wheel_1">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/Purple</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
@@ -69,7 +69,7 @@
 </gazebo>
 
 <gazebo reference="Wheel_0">
-  <material>Gazebo/Black</material>
+  <material>Gazebo/Purple</material>
   <mu1>0.2</mu1>
   <mu2>0.2</mu2>
   <selfCollide>true</selfCollide>
