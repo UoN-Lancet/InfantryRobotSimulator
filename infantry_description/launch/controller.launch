@@ -5,8 +5,6 @@
 <node args="Rev27_position_controller Rev28_position_controller Rev29_position_controller Rev30_position_controller Rev31_position_controller Rev32_position_controller Rev33_position_controller Rev34_position_controller Rev35_position_controller Rev36_position_controller Rev37_position_controller joint_state_controller " 
 name="controller_spawner" ns="/infantry" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
 
-
-
 <node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
   <remap from="/joint_states" to="/infantry/joint_states"/>
 </node>

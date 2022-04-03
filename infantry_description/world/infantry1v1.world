@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="my_world">
+    <!-- 环境光 -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+ 
+    <!-- 地面 -->
+    <include>
+      <uri>model://ground_plane</uri>
+      <script>
+        <uri>file://media/materials/scripts/gazebo.material</uri>
+        <name>Gazebo/White</name>
+      </script>
+    </include>
+    
+    <!--模型 -->
+    <model name='infantry1v1'>
+      <include>
+        <uri>model://infantry1v1</uri>
+      </include>
+    </model>
+    
+  </world>
+</sdf>

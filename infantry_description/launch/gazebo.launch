@@ -1,7 +1,9 @@
 <launch>
-  <param command="$(find xacro)/xacro $(find infantry_description)/urdf/infantry_sensor.xacro" name="robot_description"/>
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find infantry_description)/urdf/infantry_sensor.xacro" />
   <node args="-param robot_description -urdf -model infantry" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find infantry_description)/world/infantry1v1.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
