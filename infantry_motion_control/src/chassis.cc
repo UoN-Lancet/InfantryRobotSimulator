@@ -7,6 +7,7 @@
 
 static const float chassisRadius = 0.22627417; // Radius = 0.16 * sqrt(2)  meters
 static const float rtChassisRadius = 0.16; // Radius = Rdius / sqrt(2)  meters
+static const float velocityOffset = 10;
 
 
 class SwerveControl{
@@ -83,7 +84,7 @@ public:
     for (int i = 0; i <= 3; i++) {
       float angle = atan2(swerve[i].y, swerve[i].x);
       swerve[i].angle.data = (angle >= 0) ? angle : (angle + 2 * M_PI);
-      swerve[i].velocity.data = (float) sqrt(pow(swerve[i].x, 2) + pow(swerve[i].y, 2));
+      swerve[i].velocity.data = velocityOffset * (float) sqrt(pow(swerve[i].x, 2) + pow(swerve[i].y, 2));
     }
 
     for (int i = 0; i <= 3; i++) {

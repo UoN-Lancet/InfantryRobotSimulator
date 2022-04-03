@@ -129,7 +129,7 @@ rostopic pub -r 10 /chassis_cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 1, z
 
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 0.7854"
 
-rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 5.4978"
+rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 4.7124"
 
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 0"
 */
