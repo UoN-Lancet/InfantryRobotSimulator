@@ -61,14 +61,14 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 见Doc/frames.pdf
 
 ## Todo
-[x] 控制逻辑，使用python或者cpp实现完整控制逻辑
+- [x] 控制逻辑，使用python或者cpp实现完整控制逻辑
 
-[x] 加装传感器，实现SLAM并发布odom
+- [x] 加装传感器，实现SLAM并发布odom
 
-[x] 实现2D平面导航
+- [x] 实现2D平面导航
 
-[x] 提高导航的稳定性
+- [x] 提高导航的稳定性
 
-[ ] 加装IMU
+- [ ] 加装IMU
 
-[x] 建立自动步兵1V1场地
+- [x] 建立自动步兵1V1场地
