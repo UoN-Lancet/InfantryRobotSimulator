@@ -1,15 +1,18 @@
 # InfantryRobotSimulator
 
 
-## 本仓库属于[诺丁汉大学RoboMaster团队](https://github.com/UoN-Lancet)AnywareInLoop系统
+## This repo is a part of [UoN RoboMaster Team](https://github.com/UoN-Lancet) AnywareInLoop System
 
 ![avatar](./doc/1.png)
-## 安装过程
-创建catkin_ws/src
-克隆仓库
+## Installation
+```
+mkdir catkin_ws/src
+cd catkin_ws/src
+git clone https://github.com/UoN-Lancet/InfantryRobotSimulator
 catkin_make
+```
 
-## 依赖
+## Dependencies
 ```bash
 sudo apt-get install ros-$(distro)-joint-state* 
 sudo apt-get install ros-$(distro)-robot-state* 
@@ -25,7 +28,7 @@ echo "export ~/catkin_ws/src/InfantryRobotSimulator/infantry_description/world" 
 source ~/.bashrc
 ```
 
-## 运行
+## Run
 
 ```bash
 roslaunch infantry_description gazebo.launch # 打开gazebo模拟器，显示机器人
@@ -47,7 +50,8 @@ roslaunch infantry_navigation navigation.launch # 启动SLAM并开始导航
 rviz -d infantry_simulation.rviz # 启动rviz查看导航效果
 ```
 
-## 控制
+## Control
+
 ```bash
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 3.1416" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
 ```
@@ -58,9 +62,11 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 
 
 ## TF
-见Doc/frames.pdf
+
+![](doc/frames.png)
 
 ## Todo
+
 - [x] 控制逻辑，使用python或者cpp实现完整控制逻辑
 
 - [x] 加装传感器，实现SLAM并发布odom
