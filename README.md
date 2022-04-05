@@ -74,7 +74,7 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 
 - [x] 用cartographer替换gmapping提高SLAM的稳定性
 
-- [ ] 加装IMU
+- [x] 加装IMU
 
 - [x] 建立自动步兵1V1场地
 - [ ] 使模型TF坐标x方向向前
