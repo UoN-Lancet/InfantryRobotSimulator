@@ -1,29 +1,51 @@
 <?xml version="1.0"?>
-<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+<robot name="infantry" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(find infantry_description)/urdf/infantry.xacro" />
 <xacro:include filename="$(find infantry_description)/urdf/lidar.xacro"/>
-	
-    
+<xacro:include filename="$(find infantry_description)/urdf/imu.xacro"/>
+
+
     <xacro:property name="lidar_offset_x" value="0" />
     <xacro:property name="lidar_offset_y" value="0" />
     <xacro:property name="lidar_offset_z" value="0.1" />
-
     <!-- <xacro:property name="lidar_offset_yaw" value="1.5707963267948966" /> -->
-
     <!-- Lidar -->
     <joint name="lidar_joint" type="fixed">
 
         <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" 
                 rpy="0 0 0" />
-                
+
         <!-- <origin xyz="${lidar_offset_x} ${lidar_offset_y} ${lidar_offset_z}" 
                 rpy="0 0 ${lidar_offset_yaw}" /> -->
 
         <parent link="GimbalMiddlePart_1"/>
         <child link="laser_link"/>
     </joint>
-    <xacro:lidar prefix="laser"/>
+    <!-- <xacro:lidar prefix="laser"/> -->
+
+
+
+    <xacro:property name="imu_offset_x" value="0" />
+    <xacro:property name="imu_offset_y" value="0" />
+    <!-- <xacro:property name="imu_offset_z" value="0.14" /> -->
+    <xacro:property name="imu_offset_z" value="0" />
+    <!-- <xacro:property name="imu_offset_yaw" value="1.5707963267948966" /> -->
+    <!-- IMU -->
+    <joint name="imu_joint" type="fixed">
+
+        <origin xyz="${imu_offset_x} ${imu_offset_y} ${imu_offset_z}" 
+                rpy="0 0 0" />
+
+        <!-- <origin xyz="${imu_offset_x} ${imu_offset_y} ${imu_offset_z}" 
+                rpy="0 0 ${imu_offset_yaw}" /> -->
+
+        <parent link="GimbalMiddlePart_1"/>
+        <child link="imu_link"/>
+    </joint>
+    <!-- <xacro:imu prefix="imu"/> -->
+
+
 </robot>
 
 

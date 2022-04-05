@@ -7,7 +7,7 @@
 
 static const float chassisRadius = 0.22627417; // Radius = 0.16 * sqrt(2)  meters
 static const float rtChassisRadius = 0.16; // Radius = Rdius / sqrt(2)  meters
-static const float velocityOffset = 10;
+static const float velocityOffset = 20;
 
 
 class SwerveControl{

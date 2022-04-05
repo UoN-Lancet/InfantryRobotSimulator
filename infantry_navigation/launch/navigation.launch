@@ -1,8 +1,10 @@
 <launch>
 
-    <node pkg="tf" type="static_transform_publisher" name="navigation" args="0 0 0 0 0 0 odom base_link 100"/>
+    <!-- <node pkg="tf" type="static_transform_publisher" name="navigation" args="0 0 0 0 0 0 odom base_link 100"/> -->
 
     <include file="$(find infantry_navigation)/launch/cartographer.launch" />
+
+    <!-- <include file="$(find infantry_navigation)/launch/gmapping.launch" /> -->
     <include file="$(find infantry_navigation)/launch/move_base.launch" />
 
 </launch>

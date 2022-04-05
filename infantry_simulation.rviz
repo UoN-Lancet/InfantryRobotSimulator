@@ -6,8 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /LaserScan1
         - /TF1/Frames1
+        - /Map2
+        - /Map3
       Splitter Ratio: 0.5
     Tree Height: 1635
   - Class: rviz/Selection
@@ -140,7 +141,9 @@ Visualization Manager:
         Yaw_1:
           Value: false
         base_link:
-          Value: false
+          Value: true
+        imu_link:
+          Value: true
         laser_link:
           Value: true
         map:
@@ -164,6 +167,8 @@ Visualization Manager:
                       {}
                     VT02_1:
                       {}
+                imu_link:
+                  {}
                 laser_link:
                   {}
               SwervePart_0:
@@ -183,23 +188,23 @@ Visualization Manager:
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
-      Draw Behind: false
-      Enabled: false
+      Draw Behind: true
+      Enabled: true
       Name: Map
       Topic: /move_base/global_costmap/costmap
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
-      Draw Behind: false
-      Enabled: false
+      Draw Behind: true
+      Enabled: true
       Name: Map
       Topic: /move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
@@ -292,7 +297,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.608243465423584
+      Distance: 6.497696876525879
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -300,17 +305,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.008926033973693848
-        Y: 0.008550736121833324
-        Z: -0.005875030532479286
+        X: -0.20205020904541016
+        Y: -0.306958943605423
+        Z: -0.3330008387565613
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7147971391677856
+      Pitch: 1.184796690940857
       Target Frame: <Fixed Frame>
-      Yaw: 4.940427303314209
+      Yaw: 4.865936756134033
     Saved:
       - Class: rviz/Orbit
         Distance: 3.902153730392456

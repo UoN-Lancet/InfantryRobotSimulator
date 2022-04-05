@@ -3,17 +3,17 @@ recovery_behavior_enabled: false
 clearing_rotation_allowed: false
 
 DWAPlannerROS:
-   max_vel_x: 1
-   min_vel_x: -1
-   max_vel_y: 1  # zero for a differential drive robot
-   min_vel_y: -1
-   max_vel_theta: 2.0
-   min_vel_theta: -2.0
-   min_in_place_vel_theta: 0.8
-   escape_vel: -1
-   acc_lim_x: 3
-   acc_lim_y: 3  # zero for a differential drive robot
-   acc_lim_theta: 2.4
+   max_vel_x: 4
+   min_vel_x: -4
+   max_vel_y: 4  # zero for a differential drive robot
+   min_vel_y: -4
+   max_vel_theta: 8
+   min_vel_theta: -8
+   min_in_place_vel_theta: 8
+   escape_vel: -4
+   acc_lim_x: 12
+   acc_lim_y: 12  # zero for a differential drive robot
+   acc_lim_theta: 10
 
    holonomic_robot: true
    yaw_goal_tolerance: 0.1 # about 6 degrees
