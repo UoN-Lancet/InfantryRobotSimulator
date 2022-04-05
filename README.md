@@ -1,10 +1,9 @@
 # InfantryRobotSimulator
 
-
-## This repo is a part of [UoN RoboMaster Team](https://github.com/UoN-Lancet) AnywareInLoop System
+## 本仓库属于[诺丁汉大学RoboMaster团队](https://github.com/UoN-Lancet)AnywareInLoop系统
 
 ![avatar](./doc/1.png)
-## Installation
+## 安装
 ```
 mkdir catkin_ws/src
 cd catkin_ws/src
@@ -12,7 +11,7 @@ git clone https://github.com/UoN-Lancet/InfantryRobotSimulator
 catkin_make
 ```
 
-## Dependencies
+## 依赖
 ```bash
 sudo apt-get install ros-$(distro)-joint-state* 
 sudo apt-get install ros-$(distro)-robot-state* 
@@ -22,13 +21,13 @@ sudo apt-get install ros-$(distro)-controller*
 
 本步兵模拟器涉及自动步兵模拟，使用Cartographer进行SLAM，对于配置Cartographer并在ROS环境中运行，请参阅[官方文档](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html)
 
-为加载步兵1v1场地，需要在.bashrc中添加环境变量，注意要将`~/catkin_ws`改为工程所在工作空间的路径：
+为加载步兵1v1场地，需要在.bashrc中添加环境变量，注意要将`catkin_ws`改为工程所在工作空间的路径：
 ```bash
-echo "export ~/catkin_ws/src/InfantryRobotSimulator/infantry_description/world" >> ~/.bashrc
+echo "export GAZEBO_MODEL_PATH=$(catkin_ws)/src/InfantryRobotSimulator/infantry_description/world" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-## Run
+## 运行
 
 ```bash
 roslaunch infantry_description gazebo.launch # 打开gazebo模拟器，显示机器人
@@ -73,8 +72,9 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 
 - [x] 实现2D平面导航
 
-- [x] 提高导航的稳定性
+- [x] 用cartographer替换gmapping提高SLAM的稳定性
 
 - [ ] 加装IMU
 
 - [x] 建立自动步兵1V1场地
+- [ ] 使模型TF坐标x方向向前
