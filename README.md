@@ -49,7 +49,7 @@ roslaunch infantry_navigation navigation.launch # 启动SLAM并开始导航
 rviz -d infantry_simulation.rviz # 启动rviz查看导航效果
 ```
 
-## Control
+## 控制
 
 ```bash
 rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 3.1416" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
