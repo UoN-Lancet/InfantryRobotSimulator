@@ -1,0 +1,6 @@
+<launch>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find infantry_navigation)/doc/infantry_simulation.rviz" />
+  
+</launch>
+

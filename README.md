@@ -29,36 +29,61 @@ source ~/.bashrc
 
 ## 运行
 
-```bash
-roslaunch infantry_description gazebo.launch # 打开gazebo模拟器，显示机器人
-```
+### 打开gazebo模拟器，显示机器人
 
 ```bash
-roslaunch infantry_description controller.launch # 打开控制器，加载控制器
+roslaunch infantry_description gazebo.launch
 ```
 
-```bash
-roslaunch infantry_motion_control motion_controller.launch # 打开运动控制节点
-```
+### 打开控制器，加载控制器
 
 ```bash
-roslaunch infantry_navigation navigation.launch # 启动SLAM并开始导航
+roslaunch infantry_description controller.launch
 ```
 
+### 打开运动控制节点
+
 ```bash
-rviz -d infantry_simulation.rviz # 启动rviz查看导航效果
+roslaunch infantry_motion_control motion_controller.launch
+```
+
+### 启动SLAM并开始导航
+
+```bash
+roslaunch infantry_navigation navigation.launch
+```
+
+### 启动rviz查看导航效果
+
+```bash
+rviz -d infantry_simulation.rviz
 ```
 
 ## 控制
 
-```bash
-rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 3.1416" # Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
-```
+### Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
 
 ```bash
-rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}' # 朝云台指向前进
+rostopic pub -r 1 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 3.1416"
 ```
 
+### 朝云台指向前进
+
+```bash
+rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
+```
+
+### 顺时针小陀螺
+
+```bash
+rostopic pub -r 1 /gyro_spin std_msgs/Int32 "data: -1"
+```
+
+### 使中层稳定朝向地图x轴方向
+
+```bash
+rostopic pub -r 100 /infantry/Rev35_position_controller/command std_msgs/Float64 "data: 0"
+```
 
 ## TF
 
@@ -67,14 +92,13 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 1, y: 0, z: 0}, an
 ## Todo
 
 - [x] 控制逻辑，使用python或者cpp实现完整控制逻辑
-
 - [x] 加装传感器，实现SLAM并发布odom
-
 - [x] 实现2D平面导航
-
 - [x] 用cartographer替换gmapping提高SLAM的稳定性
-
 - [x] 加装IMU
-
 - [x] 建立自动步兵1V1场地
 - [ ] 使模型TF坐标x方向向前
+- [x] 移动小陀螺
+- [x] 底盘旋转稳定中层朝向
+- [ ] 提升移动小陀螺流畅性
+- [ ] 中层改为速度控制

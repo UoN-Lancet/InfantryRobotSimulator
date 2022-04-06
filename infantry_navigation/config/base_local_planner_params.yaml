@@ -16,7 +16,7 @@ DWAPlannerROS:
    acc_lim_theta: 10
 
    holonomic_robot: true
-   yaw_goal_tolerance: 0.1 # about 6 degrees
+   yaw_goal_tolerance: 6.283 # Don't consider yaw goal
    xy_goal_tolerance: 0.05  # 5 cm
    latch_xy_goal_tolerance: false
    pdist_scale: 0.4
@@ -35,7 +35,7 @@ DWAPlannerROS:
    sim_granularity: 0.05
    angular_sim_granularity: 0.1
    vx_samples: 8
-   vy_samples: 8  # zero for a differential drive robot
+   vy_samples: 8
    vtheta_samples: 20
    dwa: true
    simple_attractor: false
