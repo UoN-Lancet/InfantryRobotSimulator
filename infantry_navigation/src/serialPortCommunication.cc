@@ -9,7 +9,7 @@ struct CmdVel
 {
   float angularX, angularY, angularZ;
   float linearX, linearY, linearZ;
-} 
+}
 __attribute__(( aligned(1) ));
 
 
