@@ -51,7 +51,7 @@ qtcreator-*
 CATKIN_IGNORE
 
 # Vscode config folder
-.vscode
+**/.vscode
 
 # 
 frames.gv

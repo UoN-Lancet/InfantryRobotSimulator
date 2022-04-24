@@ -30,7 +30,8 @@ public:
 class SubPuber
 {
 private:
-  ros::NodeHandle n;
+
+  ros::NodeHandle nodeHandle;
 
   // 以中层坐标系为基底的速度
   ros::Subscriber cmdVelSub;
@@ -51,16 +52,14 @@ private:
   // 订阅中层和底层的TF关系，用于处理cmd_vel到chassis_cmd_vel的转换
   tf::TransformListener listener;
 
-
-
 public:
 
   SubPuber(){
-    cmdVelSub = n.subscribe("/cmd_vel", 1, &SubPuber::cmdVelCallback, this);
-    gyroSpinSub = n.subscribe("/gyro_spin", 1, &SubPuber::gyroSpinCallback, this);
-    midTowardSub = n.subscribe("/mid_toward", 1, &SubPuber::midTowardCallback, this);
-    chassisPub = n.advertise<geometry_msgs::Twist>("/chassis_cmd_vel", 1);
-    middleMotorPub = n.advertise<std_msgs::Float64>("/infantry/Rev35_position_controller/command", 1);
+    cmdVelSub = nodeHandle.subscribe("/cmd_vel", 1, &SubPuber::cmdVelCallback, this);
+    gyroSpinSub = nodeHandle.subscribe("/gyro_spin", 1, &SubPuber::gyroSpinCallback, this);
+    midTowardSub = nodeHandle.subscribe("/mid_toward", 1, &SubPuber::midTowardCallback, this);
+    chassisPub = nodeHandle.advertise<geometry_msgs::Twist>("/chassis_cmd_vel", 1);
+    middleMotorPub = nodeHandle.advertise<std_msgs::Float64>("/infantry/Rev35_position_controller/command", 1);
 
     gyroSpinDirection = 0;
   }
@@ -70,10 +69,9 @@ public:
 
     tf::StampedTransform transform;
 
-
-    try{
+    try {
       listener.lookupTransform("/base_link", "/GimbalMiddlePart_1", ros::Time(0), transform);
-    } catch(...) { 
+    } catch (...) { 
       // ignored
     }
 
@@ -81,12 +79,9 @@ public:
     double rollAngleDiff, pitchAngleDiff, yawAngleDiff;
     tf::Matrix3x3(transform.getRotation()).getRPY(rollAngleDiff, pitchAngleDiff, yawAngleDiff);
 
-
     // cmd_vel与中层朝向的夹角，数值正负是以中层坐标为基底，速度相对的角度。即middleVelDiff>0时速度相较中层逆时针旋转。
     double middleVelDiff = atan2(cmdVel.linear.y, cmdVel.linear.x);
-
     double cmdVelModulus = sqrt(pow(cmdVel.linear.x, 2) + pow(cmdVel.linear.y, 2));
-
 
     geometry_msgs::Twist chassisCmdVel;
 
@@ -142,16 +137,15 @@ public:
   {
     tf::StampedTransform mapChassisTF;
 
-    try{
+    try {
       listener.lookupTransform("/map", "/base_link", ros::Time(0), mapChassisTF);
-    } catch(...) {
+    } catch (...) {
       // ignored
     }
 
     double rollAngleDiff, pitchAngleDiff, mapChassisAngleDiff, chassisMiddleAngleDiff;
     tf::Matrix3x3(mapChassisTF.getRotation()).getRPY(rollAngleDiff, pitchAngleDiff, mapChassisAngleDiff);
     std_msgs::Float64 middlePartDirection;
-
 
 #ifdef YAW_OFFSET
 
@@ -171,8 +165,6 @@ public:
   }
 };
 
-
-
 int main(int argc, char **argv)
 {
   //Initiate ROS
@@ -185,6 +177,8 @@ int main(int argc, char **argv)
 
   return 0;
 }
+
+// TODO: move the following comments to docs!
 
 /*
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
