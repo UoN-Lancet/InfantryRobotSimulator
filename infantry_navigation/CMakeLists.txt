@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(infantry_navigation)
 
+set(CMAKE_CXX_STANDARD 17)
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -200,3 +202,84 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  sensor_msgs
+  geometry_msgs
+  tf
+)
+
+macro(subdirs result curdir)
+    file(GLOB children RELATIVE ${curdir} ${curdir}/*)
+    set(dirlist "")
+    foreach(child ${children})
+        if(IS_DIRECTORY ${curdir}/${child})
+            list(APPEND dirlist ${child})
+        endif()
+    endforeach()
+    set(${result} ${dirlist})
+endmacro()
+
+macro(subfiles result curdir)
+    file(GLOB children RELATIVE ${curdir} ${curdir}/*)
+    set(filelist "")
+    foreach(child ${children})
+        if(NOT IS_DIRECTORY ${curdir}/${child})
+            list(APPEND filelist ${child})
+        endif()
+    endforeach()
+    set(${result} ${filelist})
+endmacro()
+
+
+## Specify additional locations of header files
+## Your package locations should be listed before other locations
+include_directories(
+# include
+  ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+message("")
+
+set(THIRD_PARTY_LIB_SHARED "")
+set(THIRD_PARTY_LIB_STATIC "")
+
+subdirs(submodules "${PROJECT_SOURCE_DIR}/ThirdParty")
+foreach(submodule ${submodules})
+    message("- ::Submodule:: ${submodule}")
+    include_directories(${PROJECT_SOURCE_DIR}/ThirdParty/${submodule}/include)
+    link_directories(${PROJECT_SOURCE_DIR}/ThirdParty/${submodule}/build)
+    subfiles(libs ${PROJECT_SOURCE_DIR}/ThirdParty/${submodule}/build)
+
+    foreach(lib ${libs})
+        if(${lib} MATCHES "lib.+\\.so")
+            string(REGEX REPLACE "(lib)|(\\.so)" "" lib ${lib})
+            list(APPEND THIRD_PARTY_LIB_SHARED ${lib})
+            message("  - shared lib: ${lib}")
+        elseif(${lib} MATCHES "lib.+\\.a")
+            string(REGEX REPLACE "(lib)|(\\.a)" "" lib ${lib})
+            list(APPEND THIRD_PARTY_LIB_STATIC ${lib})
+            message("  - static lib: ${lib}")
+        endif()
+    endforeach()
+endforeach()
+message("")
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(${PROJECT_NAME}_node src/serialPortCommunication.cc)
+
+target_link_libraries(${PROJECT_NAME}_node
+  ${THIRD_PARTY_LIB_STATIC}
+  ${THIRD_PARTY_LIB_SHARED}
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
+
+    
+target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})

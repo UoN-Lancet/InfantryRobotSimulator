@@ -56,7 +56,7 @@ roslaunch infantry_navigation navigation.launch
 ### 启动rviz查看导航效果
 
 ```bash
-rviz -d infantry_simulation.rviz
+roslaunch infantry_navigation rviz.launch
 ```
 
 ## 控制

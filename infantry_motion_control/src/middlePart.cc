@@ -69,8 +69,8 @@ public:
   {
 
     tf::StampedTransform transform;
-    
-    
+
+
     try{
       listener.lookupTransform("/base_link", "/GimbalMiddlePart_1", ros::Time(0), transform);
     } catch(...) { 
@@ -129,7 +129,6 @@ public:
     chassisCmdVel.angular.z = cmdVel.angular.z + gyroSpinDirection * gyroSpinSpd;
 
     // ROS_INFO("yawAngleDiff and middleVelDiff is %lf %lf", yawAngleDiff, middleVelDiff);
-
     chassisPub.publish(chassisCmdVel);
   }
 
