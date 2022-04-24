@@ -59,6 +59,22 @@ roslaunch infantry_navigation navigation.launch
 roslaunch infantry_navigation rviz.launch
 ```
 
+### 如需进行串口通信进行实机测试，输入以下指令：
+
+### 启动导航节点
+
+```bash
+roslaunch infantry_navigation navigation.launch
+```
+
+### 打开串口通信
+
+```bash
+rosrun infantry_navigation infantry_navigation_node
+```
+
+
+
 ## 控制
 
 ### Rev35是中层对地盘的旋转轴，其他轴对应关系在xarco中可以查到
