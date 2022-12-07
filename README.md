@@ -15,8 +15,10 @@ catkin_make
 ```bash
 sudo apt-get install ros-$(distro)-joint-state* 
 sudo apt-get install ros-$(distro)-robot-state* 
-sudo apt-get install ros-$(distro)-ros-gazebo*
+sudo apt-get install ros-$(distro)-gazebo*
 sudo apt-get install ros-$(distro)-controller*
+sudo apt-get install ros-$(distro)-effort-controllers
+sudo apt-get install ros-$(distro)-velocity-controllers
 ```
 
 本步兵模拟器涉及自动步兵模拟，使用Cartographer进行SLAM，对于配置Cartographer并在ROS环境中运行，请参阅[官方文档](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html)
